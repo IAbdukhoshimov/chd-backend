@@ -1,13 +1,9 @@
-import { ISend } from "../models/Send"; 
+import { SendStorage } from "./mongo/send";
 
-export interface ISendAllResponse {
-    payload:ISend[]
-    count: number
+interface IStorage {
+    send:SendStorage
 }
 
-export interface SendRepo {
-    create(payload:ISend):Promise<ISend>
-    delete(id:string):Promise<any>
-    find(query:Object):Promise<ISend[]>
-    findOne(query:Object):Promise<ISend>
+export let storage:IStorage = {
+    send:new SendStorage()
 }

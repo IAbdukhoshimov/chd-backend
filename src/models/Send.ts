@@ -6,9 +6,6 @@ export interface ISend extends Document{
     orgName:string
     phoneNumber:string
     description:string
-    cost:string
-    location:string
-    photo:string 
 }
 
 let SendSchema = new mongoose.Schema({
@@ -25,17 +22,6 @@ let SendSchema = new mongoose.Schema({
         required:true
     },
     description:{
-        type:String
-    },
-    cost:{
-        type:String,
-        required:true
-    },
-    location:{
-        type:String,
-        required:true
-    },
-    photo:{
         type:String
     }
 })
